@@ -186,15 +186,18 @@ try {
 
 console.assert(typeof psMod.default === 'function', 'ProjectsSection default export must be a function');
 console.assert(Array.isArray(psMod.PROJECTS), 'PROJECTS must be an array');
-console.assert(psMod.PROJECTS.length === 5, `PROJECTS must have 5 items, got ${psMod.PROJECTS.length}`);
+console.assert(psMod.PROJECTS.length === 8, `PROJECTS must have 5 items, got ${psMod.PROJECTS.length}`);
 
 // 6. Test PROJECTS data integrity
 const expectedIds = [
   'reading-history',
+  'khushi-portfolio',
   'code-with-ai-quiz',
   'student-marks-analysis',
   'buggy-python-debugging',
-  'struct-to-dict'
+  'struct-to-dict',
+  'fibonacci-generator',
+  'factorial-calculator'
 ];
 
 for (let i = 0; i < expectedIds.length; i++) {
@@ -210,14 +213,14 @@ for (let i = 0; i < expectedIds.length; i++) {
   console.assert(p.github.startsWith('https://github.com/khushigsd2924-design/'), `Project ${p.id} invalid GitHub URL: ${p.github}`);
   console.assert(Array.isArray(p.features) && p.features.length >= 4, `Project ${p.id} must have >= 4 features`);
 }
-console.log('PASS: All 5 PROJECTS validated with correct schemas and khushigsd2924-design URLs');
+console.log('PASS: All 8 PROJECTS validated with correct schemas and khushigsd2924-design URLs');
 
 // 7. Verify category filtering logic
 const categories = ['All', 'Full-Stack Web', 'Interactive Web', 'Python & Algorithms', 'Software Engineering', 'Systems & Data'];
 for (const cat of categories) {
   const filtered = cat === 'All' ? psMod.PROJECTS : psMod.PROJECTS.filter(p => p.category === cat);
   if (cat === 'All') {
-    console.assert(filtered.length === 5, 'All category must return 5 projects');
+    console.assert(filtered.length === 8, 'All category must return 5 projects');
   } else {
     console.assert(filtered.length >= 1, `Category "${cat}" must return at least 1 project`);
     for (const p of filtered) {
@@ -242,7 +245,7 @@ for (const p of psMod.PROJECTS) {
   console.assert(psHtml.includes(p.title), `Rendered HTML must contain project title: ${p.title}`);
   console.assert(psHtml.includes(p.github), `Rendered HTML must contain GitHub URL: ${p.github}`);
 }
-console.log('PASS: ProjectsSection static markup renders all 5 projects and filters');
+console.log('PASS: ProjectsSection static markup renders all 8 projects and filters');
 
 // 9. Render ProjectModal with a project and when null
 const modalNullHtml = renderToStaticMarkup(React.createElement(pmMod.default, { project: null, onClose: () => {} }));

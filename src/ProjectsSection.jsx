@@ -1,6 +1,18 @@
 // src/ProjectsSection.jsx
 import React, { useState } from 'react';
-import { ExternalLink, Github, Sparkles, BookOpen, Brain, BarChart2, ShieldCheck, Binary } from 'lucide-react';
+import {
+  ExternalLink,
+  Github,
+  Sparkles,
+  BookOpen,
+  Brain,
+  BarChart2,
+  ShieldCheck,
+  Binary,
+  Activity,
+  Calculator,
+  Eye
+} from 'lucide-react';
 import { sounds } from './soundEffects';
 import useScrollReveal from './useScrollReveal';
 import ProjectModal from './ProjectModal';
@@ -23,6 +35,24 @@ export const PROJECTS = [
       'Live reading goal progress bars and statistical metrics',
       'Supabase database integration with cloud persistence',
       'Modern responsive UI with Tailwind and fluid transitions'
+    ]
+  },
+  {
+    id: 'khushi-portfolio',
+    title: 'Interactive 3D Gaze Portfolio',
+    subtitle: '60 FPS Canvas Physics & Web Audio',
+    icon: Eye,
+    category: 'Interactive Web',
+    tech: ['React 19', 'Vite 6', 'HTML5 Canvas 2D', 'Web Audio API', 'Lenis'],
+    summary: 'Award-winning luxury interactive portfolio featuring real-time 60 FPS cursor gaze physics and procedural sound.',
+    description: 'A cutting-edge creative developer portfolio featuring 64 high-resolution WebP studio frames rendered on an HTML5 canvas with sub-pixel pointer lerping, shortest-path circular trigonometry, zero-asset Web Audio API synthesizers, and Lenis smooth momentum scrolling.',
+    github: 'https://github.com/khushigsd2924-design/khushi-portfolio',
+    demo: 'https://github.com/khushigsd2924-design/khushi-portfolio',
+    features: [
+      '60 FPS HTML5 Canvas real-time cursor tracking across 64 radial angles',
+      'Sub-pixel pointer coordinate dampening with deadzone center gaze locking',
+      'Zero-asset procedural Web Audio API synthesizers for organic interaction feedback',
+      'Inertial momentum smooth scrolling with Lenis and backdrop scroll locking'
     ]
   },
   {
@@ -91,6 +121,40 @@ export const PROJECTS = [
       'Validation checks for missing or corrupted field entries',
       'Structured student record serialization',
       'Includes verification audit and assertion tests'
+    ]
+  },
+  {
+    id: 'fibonacci-generator',
+    title: 'Fibonacci Sequence Generator',
+    subtitle: 'Algorithmic Complexity & Optimization',
+    icon: Activity,
+    category: 'Python & Algorithms',
+    tech: ['Python 3', 'Algorithms', 'Mathematical Computing', 'Code Auditing'],
+    summary: 'Configurable sequence generator with algorithmic complexity optimization and audit verification.',
+    description: 'An optimized Python sequence engine designed for precision generation of Fibonacci sequences. Accompanied by a formal audit report (Audit.md) validating algorithmic bounds, iteration guarantees, and zero-dependency efficiency.',
+    github: 'https://github.com/khushigsd2924-design/python-basics-fibonacci',
+    features: [
+      'Configurable sequence length generator with iterative time efficiency',
+      'Formal Audit.md verifying README claims against source implementation',
+      'Zero external runtime library dependencies for lightweight execution',
+      'Clean mathematical computing and algorithmic output formatting'
+    ]
+  },
+  {
+    id: 'factorial-calculator',
+    title: 'Factorial Algorithmic Engine',
+    subtitle: 'Computational Arithmetic & Verification',
+    icon: Calculator,
+    category: 'Python & Algorithms',
+    tech: ['Python 3', 'Recursive Math', 'Verification Audit', 'Clean Code'],
+    summary: 'High-precision algorithmic factorial engine with formal claim audit and edge verification.',
+    description: 'Calculates discrete factorials through rigorous iteration and recursive structures. Includes comprehensive documentation audits ensuring algorithmic correctness and reproducible console evaluations.',
+    github: 'https://github.com/khushigsd2924-design/python-basics-factorial',
+    features: [
+      'High-precision factorial computation and bounded loop iteration',
+      'Fact-check verification audit (Audit.md) validating all operational claims',
+      'Modular architecture with clean formatting and instant calculation',
+      'Comprehensive edge-case handling for zero and boundary inputs'
     ]
   }
 ];
